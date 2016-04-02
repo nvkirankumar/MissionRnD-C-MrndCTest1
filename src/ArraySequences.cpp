@@ -35,7 +35,7 @@ int * find_sequences(int *arr, int len){
 	
 	if (arr == NULL || len <= 0)
 		return NULL;
-	int i, *res, k = 0, l = 0, temp1, temp2, flag;
+	int i, k = 0, l = 0, temp1, temp2, *a,flag;
 	res = (int*)malloc(sizeof(int)* 6);
 	for (i = 0; i < len - 1;)
 	{
@@ -52,16 +52,16 @@ int * find_sequences(int *arr, int len){
 			flag = arr[i + 1] - arr[i];
 			res[l] = i; l++;
 			for (k = i + 1; (arr[k + 1] - arr[k]) == flag && k<len - 1; k++);
-			res[l] = k; l++;
+			a[l] = k; l++;
 			i = k;
 		}
 		else
 			i++;
 	}
-	res[l] = temp1;
-	res[l + 1] = temp2;
+	a[l] = temp1;
+	a[l + 1] = temp2;
 
 
-	return res;
+	return a;
 
 }
