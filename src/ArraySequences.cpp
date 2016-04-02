@@ -36,22 +36,32 @@ int * find_sequences(int *arr, int len){
 	if (arr == NULL || len <= 0)
 		return NULL;
 	int i, k = 0, l = 0, temp1, temp2, *a,t;
-	res = (int*)malloc(sizeof(int)* 6);
+	a = (int*)malloc(sizeof(int)* 6);
 	for (i = 0; i < len - 1;)
 	{
 		if ((arr[i + 1] * 1.0 / arr[i] * 1.0) == (arr[i + 2] * 1.0 / arr[i + 1] * 1.0))
 		{
 			t = arr[i + 1] / arr[i];
 			temp1 = i;
-			for (k = i + 1; (arr[k + 1] * 1.0 / arr[k] * 1.0) == t && k<len - 1; k++);
-			temp2 = k;
+			for (k = i + 1; k < len - 1; )
+			{
+				if ((arr[k + 1] * 1.0 / arr[k] * 1.0) == t)
+					k++;
+				
+			}
+			a[l] = k; l++;
 			i = k;
 		}
 		else if ((arr[i + 1] - arr[i]) == (arr[i + 2] - arr[i + 1]))
 		{
 			t = arr[i + 1] - arr[i];
 			a[l] = i; l++;
-			for (k = i + 1; (arr[k + 1] - arr[k]) == t && k<len - 1; k++);
+			for (k = i + 1; k < len - 1;)
+			{
+				if ((arr[k + 1] - arr[k]) == t)
+					k++;
+
+			}
 			a[l] = k; l++;
 			i = k;
 		}
