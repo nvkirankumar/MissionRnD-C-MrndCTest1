@@ -35,10 +35,10 @@ struct node{
 
 int length(struct node *head)
 {
-	int len = 0;
+	int l = 0;
 	while (head != NULL)
 	{
-		len++;
+		l++;
 		head = head->next;
 	}
 	return len;
