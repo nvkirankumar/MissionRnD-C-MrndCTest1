@@ -50,7 +50,7 @@ int * find_sequences(int *arr, int len){
 		else if ((arr[i + 1] - arr[i]) == (arr[i + 2] - arr[i + 1]))
 		{
 			t = arr[i + 1] - arr[i];
-			res[l] = i; l++;
+			a[l] = i; l++;
 			for (k = i + 1; (arr[k + 1] - arr[k]) == t && k<len - 1; k++);
 			a[l] = k; l++;
 			i = k;
