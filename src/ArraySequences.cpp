@@ -65,5 +65,3 @@ int * find_sequences(int *arr, int len){
 	return res;
 
 }
-Status API Training Shop Blog About
-© 2016 GitHub, Inc.Terms Privacy Security Conta

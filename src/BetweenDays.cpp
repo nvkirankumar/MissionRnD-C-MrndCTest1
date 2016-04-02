@@ -28,7 +28,11 @@ struct node{
 	struct node *next;
 };
 
+struct lnode *lptr;
 
 int between_days(struct node *date1head, struct node *date2head){
+
+
+
 	return -1;
 }
